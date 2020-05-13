@@ -1,4 +1,7 @@
-var plugins = []
+var plugins = [{
+      plugin: require('/Users/harrietballantyne/Dev/jhtrt/jhtrt-site/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
+      options: {"plugins":[],"repositoryName":"jhtrt","langs":["en-gb"],"defaultLang":"en-gb","previews":true},
+    }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {

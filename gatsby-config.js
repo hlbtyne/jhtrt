@@ -6,5 +6,16 @@
 
 module.exports = {
   pathPrefix: "/jhtrt",
-  plugins: [],
+  plugins: [
+    {
+      resolve: 'gatsby-source-prismic-graphql',
+        options: {
+          repositoryName: 'jhtrt', 
+          langs: ['en-gb'],
+          defaultLang: 'en-gb',
+          previews: true,
+          
+      }
+    }
+  ],
 }
