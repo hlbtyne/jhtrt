@@ -11,6 +11,8 @@ import syncRequires from "./sync-requires"
 // Generated during bootstrap
 import matchPaths from "./match-paths.json"
 
+import { Navbar } from '../src/components/Navbar';
+
 window.___emitter = emitter
 
 const loader = new DevLoader(syncRequires, matchPaths)
@@ -64,7 +66,10 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     const preferDefault = m => (m && m.default) || m
     let Root = preferDefault(require(`./root`))
     domReady(() => {
-      renderer(<Root />, rootElement, () => {
+      renderer(<div>
+        <Navbar/>
+        <Root /> 
+      </div>, rootElement, () => {
         apiRunner(`onInitialClientRender`)
       })
     })

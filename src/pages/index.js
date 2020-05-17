@@ -1,4 +1,8 @@
-import React from "react"
+import React from "react";
+import "bootswatch/dist/lux/bootstrap.min.css";
+
+import { CardSection } from '../components/CardSection';
+import { RichText } from '../components/RichText';
 
 export const query = graphql`
 {
@@ -24,16 +28,15 @@ export const query = graphql`
 
 export default ({ data }) => {
   
-  const quote = data.prismic.page.quote[0].text
+  const quote = data.prismic.page.quote[0]
   const cardsData = data.prismic.page.body1[0].fields
-
-  const cards = cardsData.map(card => <div>{card.card_text[0].text}</div>)
 
     return (
       <div>
-        <div>{quote}</div>
-          {cards}
-        </div>
+        <RichText content={quote} />
+        <CardSection cardsData={cardsData} />
+      </div>
+        
     )
 }
 

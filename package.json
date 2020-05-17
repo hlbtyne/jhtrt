@@ -16,13 +16,15 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "bootswatch": "^4.5.0",
     "gatsby": "^2.20.12",
     "gatsby-source-prismic-graphql": "^3.5.0",
     "prismic-reactjs": "^1.3.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
