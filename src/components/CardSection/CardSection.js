@@ -4,20 +4,24 @@ import styled from 'styled-components';
 import { RichText } from '../RichText';
 
 const CardsContainer = styled.div`
+  @media (min-width: 750px) {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 0 30px;
-  `;
+  }
+  padding: 0 30px;
+`;
 
 const Card = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 300px;
-    margin: 8px;
+    margin: 8px 8px 20px 8px;
     padding: 40px 20px;
-    box-shadow: 5px 5px 20px silver;
+    box-shadow: 2px 2px 10px silver;
+    @media (min-width: 750px) {
+      max-width: 300px;
+    }
 `;
 
 export const CardSection = ({ cardsData }) => {
