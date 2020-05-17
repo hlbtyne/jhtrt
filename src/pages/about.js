@@ -1,5 +1,7 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+
+import { Navbar } from '../components/Navbar';
 
 export const query = graphql`
 {
@@ -43,8 +45,9 @@ export const AboutPage = ({ data }) => {
 
   return (
       <div>
+        <Navbar />
         About
-        </div>
+      </div>
     )
 }
 

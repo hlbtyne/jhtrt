@@ -3,6 +3,7 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 
 import { CardSection } from '../components/CardSection';
 import { RichText } from '../components/RichText';
+import { Navbar } from '../components/Navbar';
 
 export const query = graphql`
 {
@@ -33,6 +34,7 @@ export default ({ data }) => {
 
     return (
       <div>
+        <Navbar />
         <RichText content={quote} />
         <CardSection cardsData={cardsData} />
       </div>
