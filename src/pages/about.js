@@ -2,6 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import { Navbar } from '../components/Navbar';
+import { QuoteSection } from '../components/QuoteSection';
+import { TitleSection } from '../components/TitleSection';
+import { TextSection } from '../components/TextSection';
+import { PageContent } from '../components/PageContent';
 
 export const query = graphql`
 {
@@ -36,17 +40,22 @@ export const query = graphql`
     }
   }
 }
-`
+`;
 
 export const AboutPage = ({ data }) => {
 
-  const quote = data.prismic.page.quote[0].text
+  const quote = data.prismic.page.quote[0]
+  const title = data.prismic.page.title[0]
   const text = data.prismic.page.page_text
 
   return (
       <div>
         <Navbar />
-        About
+        {quote ? <QuoteSection quoteData={quote} /> : null}
+        <PageContent>
+          {title ? <TitleSection titleData={title} /> : null}
+          {text.length ? <TextSection textData={text} /> : null}
+        </PageContent>
       </div>
     )
 }

@@ -1,17 +1,41 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Navbar } from '../components/Navbar';
 
+import { Navbar } from '../components/Navbar';
+import { QuoteSection } from '../components/QuoteSection';
+import { TitleSection } from '../components/TitleSection';
+import { TextSection } from '../components/TextSection';
+import { PageContent } from '../components/PageContent';
 
 export const query = graphql`
 {
   prismic {
     page(lang: "en-gb", uid: "legacy") {
       quote
-      page_text
-      title
       _meta {
         uid
+      }
+      page_text
+      title
+      body1 {
+        ... on PRISMIC_PageBody1Info_card {
+          type
+          fields {
+            card_text
+          }
+        }
+        ... on PRISMIC_PageBody1Past_projects {
+          type
+          label
+          primary {
+            past_projects_title
+          }
+          fields {
+            project_date
+            project_description
+            researcher_name
+          }
+        }
       }
     }
   }
@@ -21,13 +45,18 @@ export const query = graphql`
 
 export const LegacyPage = ({ data }) => {
 
-  const quote = data.prismic.page.quote[0].text
+  const quote = data.prismic.page.quote[0]
+  const title = data.prismic.page.title[0]
   const text = data.prismic.page.page_text
 
-    return (
+  return (
       <div>
         <Navbar />
-        Legacy
+        {quote ? <QuoteSection quoteData={quote} /> : null}
+        <PageContent>
+          {title ? <TitleSection titleData={title} /> : null}
+          {text.length ? <TextSection textData={text} /> : null}
+        </PageContent>
       </div>
     )
 }
