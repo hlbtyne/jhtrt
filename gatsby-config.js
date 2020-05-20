@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  pathPrefix: "/jhtrt",
+  // pathPrefix: "/jhtrt",
   plugins: [
     {
       resolve: 'gatsby-source-prismic-graphql',

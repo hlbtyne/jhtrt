@@ -16,6 +16,8 @@ export const RichText = ({ content }) => {
       return <h6>{content.text}</h6>;
     case "paragraph":
       return <div>{content.text}</div>;  
+    default:
+    return <div>{content.text}</div>; 
   }
 };
 
