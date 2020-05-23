@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 
 export const Navbar = () => (
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><Link to="/">JHTRT</Link></a>
+    <a class="navbar-brand" href="/#"><Link to="/">JHTRT</Link></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
