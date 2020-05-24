@@ -16,11 +16,12 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 8px 20px 30px 20px;
+    max-width: 500px;
+    margin: 8px auto 30px;
     padding: 40px 20px;
     border: 1px solid rgba(0,0,0,0.1);
-    /* box-shadow: 2px 2px 10px silver; */
     @media (min-width: 900px) {
+      margin: 8px 20px 30px 20px;
       max-width: 300px;
     }
 `;

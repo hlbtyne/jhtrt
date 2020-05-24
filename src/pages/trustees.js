@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Navbar } from '../components/Navbar';
+import TrusteeSection from '../components/TrusteesSection/TrusteesSection';
 
 
 export const query = graphql`
@@ -39,11 +40,12 @@ export const query = graphql`
 
 export const TrusteesPage = ({ data }) => {
 
+  const trusteesData = data.prismic.page.body[0].fields
+
     return (
       <div>
         <Navbar />
-        Trustees
-      </div>
+        {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      </div>
     )
 }
 

@@ -12,7 +12,6 @@ const Paragraph = styled.div`
 `;
 
 export const TextSection = ({ textData }) => {
-  // debugger
 const paragraphs = textData.map(paragraph => 
   <Paragraph>
     <div> 
