@@ -1,6 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+
+import { TitleSection } from '../components/TitleSection';
+import { TextSection } from '../components/TextSection';
+import { PageContent } from '../components/PageContent';
 import { Navbar } from '../components/Navbar';
+import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
 
 
 export const query = graphql`
@@ -41,11 +46,24 @@ export const query = graphql`
 
 export const SubmissionsPage = ({ data }) => {
 
+  const title = data.prismic.page.title[0];
+  const text = data.prismic.page.page_text
+  const projectsTitle = data.prismic.page.body1[0].primary.past_projects_title[0]
+  const projectsData = data.prismic.page.body1[0].fields
+
     return (
       <div>
         <Navbar />
-        Submissions
+        <PageContent>
+          {title ? <TitleSection titleData={title} /> : null}
+          {text.length ? <TextSection textData={text} /> : null}
+          </PageContent>
+          <PageContent>
+          {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
+          {projectsData.length ? <ProjectsSection projectsData={projectsData} /> : null}
+        </PageContent>
       </div>
+        
     )
 }
 

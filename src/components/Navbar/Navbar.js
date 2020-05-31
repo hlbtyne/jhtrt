@@ -1,5 +1,6 @@
 import React from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
+import './Navbar.css';
 
 import Link from "gatsby-link";
 
@@ -16,7 +17,7 @@ export const Navbar = () => (
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarColor03">
+    <div class="navbar-collapse collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <Link to="/">

@@ -45,7 +45,8 @@ export const TrusteesPage = ({ data }) => {
     return (
       <div>
         <Navbar />
-        {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      </div>
+        {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      
+      </div>
     )
 }
 

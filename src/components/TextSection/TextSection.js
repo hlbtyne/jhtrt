@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { RichText } from '../RichText';
 
 const TextContainer = styled.div`
-    margin: 20px; 
+    margin: 20px 20px 50px 20px; 
 `;
 
 const Paragraph = styled.div`

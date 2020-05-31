@@ -1,4 +1,9 @@
 import React from "react";
+import styled from 'styled-components';
+
+export const Highlight = styled.div`
+  font-size: 16px;
+`;
 
 export const RichText = ({ content }) => {
   switch (content.type) {
@@ -13,7 +18,7 @@ export const RichText = ({ content }) => {
     case "heading5":
       return <h5>{content.text}</h5>;
     case "heading6":
-      return <h6>{content.text}</h6>;
+      return <Highlight>{content.text}</Highlight>;
     case "paragraph":
       return <div>{content.text}</div>;  
     default:

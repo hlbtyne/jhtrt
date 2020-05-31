@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { RichText } from '../RichText';
 
-const TrusteesContainer = styled.div`
+export const TrusteesContainer = styled.div`
   @media (min-width: 950px) {
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ const TrusteesContainer = styled.div`
 
 `;
 
-const Trustee = styled.div`
+export const Trustee = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +29,7 @@ const Trustee = styled.div`
 `;
 
 export const TrusteeSection = ({ trusteesData }) => {
-
+  console.log(trusteesData)
   const trustees = trusteesData.map(trustee => 
     <Trustee>
       <div> 
