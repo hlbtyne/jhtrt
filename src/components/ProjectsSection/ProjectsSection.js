@@ -30,7 +30,6 @@ export const Project = styled.div`
 `;
 
 export const ProjectsSection = ({ projectsData }) => {
-  console.log(projectsData)
   const projects = projectsData.map(project => 
     <Project>
       <div> 

@@ -29,7 +29,6 @@ export const Trustee = styled.div`
 `;
 
 export const TrusteeSection = ({ trusteesData }) => {
-  console.log(trusteesData)
   const trustees = trusteesData.map(trustee => 
     <Trustee>
       <div> 
