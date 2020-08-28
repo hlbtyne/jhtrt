@@ -1,9 +1,10 @@
 import React from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
+import image from '../images/6.png';
 
 import { CardSection } from '../components/CardSection';
-import { QuoteSection } from '../components/QuoteSection';
 import { Navbar } from '../components/Navbar';
+import { HeaderSection } from '../components/HeaderSection';
 
 export const query = graphql`
 {
@@ -29,13 +30,13 @@ export const query = graphql`
 
 export default ({ data }) => {
   
-  const quote = data.prismic.page.quote[0]
+  const quoteData = data.prismic.page.quote[0]
   const cardsData = data.prismic.page.body1[0].fields
 
     return (
       <div>
         <Navbar />
-        {quote ? <QuoteSection quoteData={quote} /> : null}
+        <HeaderSection quoteData={quoteData} imageSrc={image}/>
         {cardsData.length ? <CardSection cardsData={cardsData} /> : null}
       </div>
         

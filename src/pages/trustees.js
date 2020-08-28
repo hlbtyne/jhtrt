@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Navbar } from '../components/Navbar';
+import { HeaderSection } from '../components/HeaderSection';
 import TrusteeSection from '../components/TrusteesSection/TrusteesSection';
-
+import image from '../images/1.png';
 
 export const query = graphql`
 {
@@ -45,6 +46,7 @@ export const TrusteesPage = ({ data }) => {
     return (
       <div>
         <Navbar />
+        <HeaderSection imageSrc={image}/>
         {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      
       </div>
     )

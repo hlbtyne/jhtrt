@@ -4,14 +4,13 @@ import styled from 'styled-components';
 import { RichText } from '../RichText';
 
 export const QuoteSection = ({ quoteData }) => {
-
   const QuoteContainer = styled.div`
-    margin: 20px; 
+    padding: 20px; 
   `
 
   return(
     <QuoteContainer>
-      <RichText content={quoteData} />
+      <RichText content={quoteData} color="white"/>
     </QuoteContainer>
   );
 };

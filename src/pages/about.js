@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import image from '../images/10.png';
 
 import { Navbar } from '../components/Navbar';
-import { QuoteSection } from '../components/QuoteSection';
+import { HeaderSection } from '../components/HeaderSection';
 import { TitleSection } from '../components/TitleSection';
 import { TextSection } from '../components/TextSection';
 import { PageContent } from '../components/PageContent';
@@ -51,7 +52,7 @@ export const AboutPage = ({ data }) => {
   return (
       <div>
         <Navbar />
-        {quote ? <QuoteSection quoteData={quote} /> : null}
+        <HeaderSection quoteData={quote} imageSrc={image}/>
         <PageContent>
           {title ? <TitleSection titleData={title} /> : null}
           {text.length ? <TextSection textData={text} /> : null}

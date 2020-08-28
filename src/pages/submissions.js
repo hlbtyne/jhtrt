@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import image from '../images/4.png';
 
 import { TitleSection } from '../components/TitleSection';
 import { TextSection } from '../components/TextSection';
 import { PageContent } from '../components/PageContent';
+import { HeaderSection } from '../components/HeaderSection';
 import { Navbar } from '../components/Navbar';
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
 
@@ -54,6 +56,7 @@ export const SubmissionsPage = ({ data }) => {
     return (
       <div>
         <Navbar />
+        <HeaderSection imageSrc={image}/>
         <PageContent>
           {title ? <TitleSection titleData={title} /> : null}
           {text.length ? <TextSection textData={text} /> : null}
