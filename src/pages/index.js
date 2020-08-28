@@ -34,7 +34,7 @@ export default ({ data }) => {
   const cardsData = data.prismic.page.body1[0].fields
 
     return (
-      <div>
+      <div style={{"paddingBottom": "100px",}}>
         <Navbar />
         <HeaderSection quoteData={quoteData} imageSrc={image}/>
         {cardsData.length ? <CardSection cardsData={cardsData} /> : null}

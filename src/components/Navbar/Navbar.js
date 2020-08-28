@@ -5,7 +5,7 @@ import './Navbar.css';
 import Link from "gatsby-link";
 
 export const Navbar = () => (
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "position": "sticky", "top": 0}}>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "zIndex": 100, "position": "sticky", "top": 0}}>
     <a class="navbar-brand" href="/#"><Link to="/">JHTRT</Link></a>
     <button 
       class="navbar-toggler toggler-example" 

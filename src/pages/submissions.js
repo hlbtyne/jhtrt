@@ -54,7 +54,7 @@ export const SubmissionsPage = ({ data }) => {
   const projectsData = data.prismic.page.body1[0].fields
 
     return (
-      <div>
+      <div style={{"paddingBottom": "100px",}}>
         <Navbar />
         <HeaderSection imageSrc={image}/>
         <PageContent>

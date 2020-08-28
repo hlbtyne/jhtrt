@@ -44,7 +44,7 @@ export const TrusteesPage = ({ data }) => {
   const trusteesData = data.prismic.page.body[0].fields
 
     return (
-      <div>
+      <div style={{"paddingBottom": "100px",}}>
         <Navbar />
         <HeaderSection imageSrc={image}/>
         {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      

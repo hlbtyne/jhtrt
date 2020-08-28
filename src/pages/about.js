@@ -50,7 +50,7 @@ export const AboutPage = ({ data }) => {
   const text = data.prismic.page.page_text
 
   return (
-      <div>
+      <div style={{"paddingBottom": "100px",}}>
         <Navbar />
         <HeaderSection quoteData={quote} imageSrc={image}/>
         <PageContent>
