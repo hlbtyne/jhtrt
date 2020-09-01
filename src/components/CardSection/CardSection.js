@@ -11,7 +11,7 @@ export const CardsContainer = styled.div`
     margin: 50px auto;
   }
   padding: 0 20px;
-  margin: 50px;
+  margin: 50px auto;
 `;
 
 export const Card = styled.div`
@@ -24,6 +24,7 @@ export const Card = styled.div`
     border: 1px solid rgba(0,0,0,0.1);
     @media (min-width: 950px) {
       margin: 8px 20px 30px 20px;
+      width: 400px;
     }
 `;
 

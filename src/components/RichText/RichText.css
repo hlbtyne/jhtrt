@@ -1,4 +1,12 @@
-.white {
+.quote {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    font-weight: bold;
     color: white;
     opacity: 0.8;
+    @media (min-width: 600px) {
+        font-size: 28px;
+    }
 }

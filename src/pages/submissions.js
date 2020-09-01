@@ -37,6 +37,7 @@ export const query = graphql`
             project_date
             project_description
             researcher_name
+            video_url
           }
         }
       }
@@ -47,7 +48,6 @@ export const query = graphql`
 `
 
 export const SubmissionsPage = ({ data }) => {
-
   const title = data.prismic.page.title[0];
   const text = data.prismic.page.page_text
   const projectsTitle = data.prismic.page.body1[0].primary.past_projects_title[0]

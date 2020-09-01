@@ -10,7 +10,7 @@ export const QuoteSection = ({ quoteData }) => {
 
   return(
     <QuoteContainer>
-      <RichText content={quoteData} color="white"/>
+      <RichText content={quoteData} quote/>
     </QuoteContainer>
   );
 };

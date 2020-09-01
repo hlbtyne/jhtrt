@@ -6,7 +6,7 @@ import { RichText } from '../RichText';
 export const ProjectsContainer = styled.div`
   @media (min-width: 950px) {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     margin: 20px auto;
   }
@@ -29,16 +29,30 @@ export const Project = styled.div`
     }
 `;
 
+export const StyledVideo = styled.iframe`
+  margin-top: 10px;
+  border: none;
+`;
+
 export const ProjectsSection = ({ projectsData }) => {
-  const projects = projectsData.map(project => 
+
+  const projects = projectsData.map(project => console.log(project.researcher_name[0]) ||
     <Project>
-      <div> 
-        <RichText content={project.researcher_name[0]} />
-      </div>
-      {project.project_description ?
-      <div> 
+      <RichText content={project.researcher_name[0]} />
+      {project.project_date &&
+        <RichText content={project.project_date[0]} />
+      }
+      {project.project_description &&
         <RichText content={project.project_description[0]} />
-      </div> : null
+       }
+       {project.video_url && 
+         <StyledVideo 
+          width="100%" 
+          height="300"
+          src={project.video_url} 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+         />
        }
     </Project>);
 
@@ -50,3 +64,4 @@ export const ProjectsSection = ({ projectsData }) => {
 };
 
 export default ProjectsSection;
+

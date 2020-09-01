@@ -8,8 +8,8 @@ export const TrusteesContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 50px auto;
   }
+  margin: 50px auto;
   padding: 0 20px;
 
 `;
