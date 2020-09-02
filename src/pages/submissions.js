@@ -8,7 +8,7 @@ import { PageContent } from '../components/PageContent';
 import { HeaderSection } from '../components/HeaderSection';
 import { Navbar } from '../components/Navbar';
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
-
+import { Footer } from '../components/Footer';
 
 export const query = graphql`
 {
@@ -54,7 +54,7 @@ export const SubmissionsPage = ({ data }) => {
   const projectsData = data.prismic.page.body1[0].fields
 
     return (
-      <div style={{"paddingBottom": "100px",}}>
+      <div>
         <Navbar />
         <HeaderSection imageSrc={image}/>
         <PageContent>
@@ -65,6 +65,7 @@ export const SubmissionsPage = ({ data }) => {
           {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
           {projectsData.length ? <ProjectsSection projectsData={projectsData} /> : null}
         </PageContent>
+        <Footer/>
       </div>
         
     )

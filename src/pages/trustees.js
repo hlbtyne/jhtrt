@@ -4,6 +4,7 @@ import { Navbar } from '../components/Navbar';
 import { HeaderSection } from '../components/HeaderSection';
 import TrusteeSection from '../components/TrusteesSection/TrusteesSection';
 import image from '../images/1.png';
+import { Footer } from '../components/Footer';
 
 export const query = graphql`
 {
@@ -44,10 +45,11 @@ export const TrusteesPage = ({ data }) => {
   const trusteesData = data.prismic.page.body[0].fields
 
     return (
-      <div style={{"paddingBottom": "100px",}}>
+      <div>
         <Navbar />
         <HeaderSection imageSrc={image}/>
-        {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}      
+        {trusteesData.length ? <TrusteeSection trusteesData={trusteesData} /> : null}
+        <Footer/>    
       </div>
     )
 }

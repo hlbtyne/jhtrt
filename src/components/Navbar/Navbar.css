@@ -1,3 +1,7 @@
 .collapse.in {        
     display: block !important;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #db5c1a
+}

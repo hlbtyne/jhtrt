@@ -5,6 +5,7 @@ import image from '../images/6.png';
 import { CardSection } from '../components/CardSection';
 import { Navbar } from '../components/Navbar';
 import { HeaderSection } from '../components/HeaderSection';
+import { Footer } from '../components/Footer';
 
 export const query = graphql`
 {
@@ -34,10 +35,11 @@ export default ({ data }) => {
   const cardsData = data.prismic.page.body1[0].fields
 
     return (
-      <div style={{"paddingBottom": "100px",}}>
+      <div>
         <Navbar />
         <HeaderSection quoteData={quoteData} imageSrc={image}/>
         {cardsData.length ? <CardSection cardsData={cardsData} /> : null}
+        <Footer/>
       </div>
         
     )

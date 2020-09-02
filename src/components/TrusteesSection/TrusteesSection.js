@@ -21,7 +21,8 @@ export const Trustee = styled.div`
     max-width: 500px;
     margin: 8px auto 30px;
     padding: 40px 20px;
-    border: 1px solid rgba(0,0,0,0.1);
+    background-color: rgba(194,176,145,0.2);
+    border-radius: 10px;
     @media (min-width: 950px) {
       margin: 8px 20px 30px 20px;
       width: 400px;

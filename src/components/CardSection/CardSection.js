@@ -15,17 +15,18 @@ export const CardsContainer = styled.div`
 `;
 
 export const Card = styled.div`
-   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 500px;
-    margin: 8px auto 30px;
-    padding: 40px 20px;
-    border: 1px solid rgba(0,0,0,0.1);
-    @media (min-width: 950px) {
-      margin: 8px 20px 30px 20px;
-      width: 400px;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 8px auto 30px;
+  padding: 40px 20px;
+  background-color: rgba(194,176,145,0.2);
+  border-radius: 10px;
+  @media (min-width: 950px) {
+    margin: 8px 20px 30px 20px;
+    width: 400px;
+  }
 `;
 
 export const CardSection = ({ cardsData }) => {

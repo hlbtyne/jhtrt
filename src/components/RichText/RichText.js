@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import './RichText.css';
 
 export const Highlight = styled.div`
   font-size: 16px;

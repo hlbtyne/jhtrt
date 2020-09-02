@@ -7,6 +7,8 @@ import { HeaderSection } from '../components/HeaderSection';
 import { TitleSection } from '../components/TitleSection';
 import { TextSection } from '../components/TextSection';
 import { PageContent } from '../components/PageContent';
+import { Footer } from '../components/Footer';
+
 
 export const query = graphql`
 {
@@ -51,13 +53,14 @@ export const LegacyPage = ({ data }) => {
   const text = data.prismic.page.page_text
 
   return (
-      <div style={{"paddingBottom": "100px",}}>
+      <div>
         <Navbar />
         <HeaderSection quoteData={quote} imageSrc={image}/>
         <PageContent>
           {title ? <TitleSection titleData={title} /> : null}
           {text.length ? <TextSection textData={text} /> : null}
         </PageContent>
+        <Footer/>
       </div>
     )
 }
