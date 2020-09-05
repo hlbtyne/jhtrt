@@ -19,6 +19,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 500px;
+  min-width: 225px;
   margin: 8px auto 30px;
   padding: 40px 20px;
   background-color: rgba(194,176,145,0.2);
@@ -33,9 +34,8 @@ export const CardSection = ({ cardsData }) => {
 
   const cards = cardsData.map(card => 
     <Card>
-      <div> 
-        <RichText content={card.card_text[0]} />
-      </div>
+        {card.card_header && <RichText content={card.card_header[0]} /> }
+        {card.card_text && <RichText content={card.card_text[0]} /> }
     </Card>);
 
   return(

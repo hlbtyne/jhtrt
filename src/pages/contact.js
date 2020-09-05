@@ -22,6 +22,7 @@ export const query = graphql`
         ... on PRISMIC_PageBody1Info_card {
           type
           fields {
+            card_header
             card_text
           }
         }

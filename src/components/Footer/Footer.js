@@ -4,13 +4,19 @@ import Link from "gatsby-link";
 
 export const FooterOuter = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   position: relative;
-  height: 250px;
+  min-height: 250px;
   background-color: #db5c1a;
   padding: 30px;
+  @media (min-width: 500px) {
+    flex-direction: row;
+    align-items: center;
+  }
+  @media (max-width: 499px) {
+    flex-direction: column;
+    align-items: left;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -22,6 +28,11 @@ export const LogoContainer = styled.div`
   height: 80px;
   border: solid 1px white;
   color: white;
+  @media (max-width: 499px) {
+    flex-direction: column;
+    align-items: left;
+    margin: 25px auto 0;
+  }
 `;
 
 const List = styled.ul`
