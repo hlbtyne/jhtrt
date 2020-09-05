@@ -57,8 +57,8 @@ export const LegacyPage = ({ data }) => {
         <Navbar />
         <HeaderSection quoteData={quote} imageSrc={image}/>
         <PageContent>
-          {title ? <TitleSection titleData={title} /> : null}
-          {text.length ? <TextSection textData={text} /> : null}
+          {title && <TitleSection titleData={title} />}
+          {text.length && <TextSection textData={text} />}
         </PageContent>
         <Footer/>
       </div>

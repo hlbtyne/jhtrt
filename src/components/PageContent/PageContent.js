@@ -6,7 +6,7 @@ export const PageContent = styled.div`
     margin: 50px 20px 80px;
     }
   @media (min-width: 900px) {
-    margin: 50px auto 80px;
+    margin: 50px auto;
     max-width: 800px;
     }
   margin: 50px 0;

@@ -37,7 +37,7 @@ export const StyledVideo = styled.iframe`
 
 export const ProjectsSection = ({ projectsData }) => {
 
-  const projects = projectsData.map(project => console.log(project.researcher_name[0]) ||
+  const projects = projectsData.map(project =>
     <Project>
       <RichText content={project.researcher_name[0]} />
       {project.project_date &&

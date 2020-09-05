@@ -1,15 +1,88 @@
 import React from "react";
 import styled from 'styled-components';
+import Link from "gatsby-link";
 
 export const FooterOuter = styled.div`
-    height: 250px;
-    background-color: #db5c1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 250px;
+  background-color: #db5c1a;
+  padding: 30px;
 `;
 
-export const Footer = () => {
+export const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 80px;
+  border: solid 1px white;
+  color: white;
+`;
 
-  return(
-    <FooterOuter/>
+const List = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  line-height: 2.2;
+  color: white;
+`;
+
+const FooterLink = styled(Link)`
+  color: white;
+`;
+
+export const Links = () => (
+  <List>
+    <ListItem>
+      <FooterLink to="/">
+          Home
+      </FooterLink>
+    </ListItem>
+    <ListItem>
+      <FooterLink to="/about">
+          About
+      </FooterLink>
+    </ListItem>
+    <ListItem>
+      <FooterLink to="/trustees">
+          Trustees
+      </FooterLink>
+    </ListItem>
+    <ListItem>
+      <FooterLink to="/legacy">
+          Legacy
+      </FooterLink>
+    </ListItem>
+    <ListItem>
+      <FooterLink to="/submissions">
+          Submissions
+      </FooterLink>
+    </ListItem>
+    <ListItem>
+      <FooterLink to="/contact">
+          Contact
+      </FooterLink>
+    </ListItem>
+  </List>
+)
+
+
+export const Footer = () => {
+  return (
+    <FooterOuter>
+        <Links />
+        <LogoContainer>
+          JHTRT
+        </LogoContainer>
+    </FooterOuter>
   );
 };
 

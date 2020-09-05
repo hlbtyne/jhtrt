@@ -19,13 +19,18 @@ export const Quote = styled.div`
   }
 `;
 
+export const PageTitle = styled.h1`
+  color: #db5c1a;
+  font-weight: bold;
+`;
+
 export const RichText = ({ content, quote }) => {
   if (quote) {
     return <Quote>{content.text}</Quote>;
   }
   switch (content.type) {
     case "heading1":
-      return <h1>{content.text}</h1>;
+      return <PageTitle>{content.text}</PageTitle>;
     case "heading2":
       return <h2>{content.text}</h2>;
     case "heading3":
