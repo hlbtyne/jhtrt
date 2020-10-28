@@ -19,13 +19,6 @@ export const Navbar = () => (
     </button>
     <div class="navbar-collapse collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <Link to="/">
-            <a class="nav-link" href="/#">
-              Home
-            </a>
-          </Link>
-        </li>
         <li class="nav-item">
           <Link to="/about">
             <a class="nav-link" href="/#">
