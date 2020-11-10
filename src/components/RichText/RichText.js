@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Highlight = styled.div`
   font-size: 16px;
-  color: ${(props) => props.white ? 'white' : null};
+  color: ${(props) => props.orange ? '#db5c1a' : null};
 `;
 
 export const Quote = styled.div`
@@ -24,7 +24,7 @@ export const PageTitle = styled.h1`
   font-weight: bold;
 `;
 
-export const RichText = ({ content, quote }) => {
+export const RichText = ({ content, quote, orange }) => {
   if (quote) {
     return <Quote>{content.text}</Quote>;
   }
@@ -40,7 +40,7 @@ export const RichText = ({ content, quote }) => {
     case "heading5":
       return <h5>{content.text}</h5>;
     case "heading6":
-      return <Highlight>{content.text}</Highlight>;
+      return <Highlight orange={orange}>{content.text}</Highlight>;
     case "paragraph":
       return <div>{content.text}</div>;  
     default:
@@ -49,7 +49,7 @@ export const RichText = ({ content, quote }) => {
 }
 
 RichText.defaultProps = {
-  color: 'black',
+  orange: false,
 };
 
 export default RichText;

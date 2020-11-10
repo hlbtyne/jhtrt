@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   plugins: [
     {
@@ -21,5 +15,13 @@ module.exports = {
       options: {
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
+  siteMetadata: {
+    title: "John Hodgson Theatre Research Trust",
+    description:
+      "",
+    url: "https://jhtrt.org.uk",
+    image: "/static/favicon.ico",
+  },
 }

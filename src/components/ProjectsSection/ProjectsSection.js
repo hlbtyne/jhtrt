@@ -43,8 +43,8 @@ export const ProjectsSection = ({ projectsData }) => {
       {project.project_date &&
         <RichText content={project.project_date[0]} />
       }
-      {project.project_description &&
-        <RichText content={project.project_description[0]} />
+      {project.project_description.length &&
+        project.project_description.map(paragraph => <RichText content={paragraph} />)
        }
        {project.video_url && 
          <StyledVideo 

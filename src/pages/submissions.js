@@ -7,7 +7,7 @@ import { TextSection } from '../components/TextSection';
 import { PageContent } from '../components/PageContent';
 import { HeaderSection } from '../components/HeaderSection';
 import { Navbar } from '../components/Navbar';
-import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
+import { ProjectsSection } from '../components/ProjectsSection/ProjectsSection';
 import { Footer } from '../components/Footer';
 
 export const query = graphql`
