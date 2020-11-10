@@ -6,9 +6,9 @@ import { CardSection } from '../components/CardSection';
 import { Navbar } from '../components/Navbar';
 import { HeaderSection } from '../components/HeaderSection';
 import { Footer } from '../components/Footer';
-// import { PageContent } from '../components/PageContent';
-// import { ProjectsSection } from '../components/ProjectsSection/ProjectsSection';
-// import { TitleSection } from '../components/TitleSection';
+import { Carousel } from '../components/Carousel';
+import { PageContent } from '../components/PageContent';
+import { TitleSection } from '../components/TitleSection';
 
 export const query = graphql`
 {
@@ -36,6 +36,15 @@ export const query = graphql`
             video_url
           }
         }
+        ... on PRISMIC_PageBody1Large_info_card {
+          primary {
+            large_card_title
+          }
+          fields {
+            card_title
+            large_card_text
+          }
+        }
       }
       _meta {
         uid
@@ -47,21 +56,26 @@ export const query = graphql`
 `
 
 export default ({ data }) => {
-  console.log(data)
   const quoteData = data.prismic.page.quote[0]
   const cardsData = data.prismic.page.body1[0].fields
-  // const projectsTitle = data.prismic.page.body1[1].primary.past_projects_title[0]
-  // const projectsData = data.prismic.page.body1[1].fields
+  const projectsTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  const projectsData = data.prismic.page.body1[1].fields
 
     return (
       <div>
         <Navbar />
         <HeaderSection quoteData={quoteData} imageSrc={image}/>
         {cardsData.length ? <CardSection cardsData={cardsData} /> : null}
-        {/* <PageContent>
+        <PageContent>
           {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
-          {projectsData.length ? <ProjectsSection projectsData={projectsData} /> : null}
-        </PageContent> */}
+          {
+            projectsData.length ? (
+                <Carousel title={projectsTitle} cards={projectsData}>
+
+                </Carousel>
+            ) : null
+          }
+        </PageContent>
         <Footer/>
       </div>
         

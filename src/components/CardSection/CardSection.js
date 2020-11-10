@@ -7,10 +7,10 @@ export const CardsContainer = styled.div`
   @media (min-width: 950px) {
     display: flex;
     justify-content: space-between;
+    padding: 40px;
   }
-  background-color: rgba(194,176,145,0.2);
-  padding: 50px;
-  margin: 0px auto 50px;
+  padding: 20px;
+  margin: 0px auto 40px;
 `;
 
 export const Card = styled.div`

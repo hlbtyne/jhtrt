@@ -9,7 +9,7 @@ export const PageContent = styled.div`
     margin: 50px auto;
     max-width: 800px;
     }
-  margin: 50px 0;
+  margin: 50px 20px;
 `;
 
 export default PageContent;

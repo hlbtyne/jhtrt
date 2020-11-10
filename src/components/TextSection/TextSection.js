@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { RichText } from '../RichText';
 
 const TextContainer = styled.div`
-    margin: 20px 20px 50px 20px; 
+    margin: 20px 0 50px; 
 `;
 
 const Paragraph = styled.div`
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
 `;
 
 export const TextSection = ({ textData }) => {

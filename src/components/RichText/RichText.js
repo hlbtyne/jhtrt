@@ -24,6 +24,10 @@ export const PageTitle = styled.h1`
   font-weight: bold;
 `;
 
+export const Paragraph = styled.div`
+  margin-bottom: 10px;
+`;
+
 export const RichText = ({ content, quote, orange }) => {
   if (quote) {
     return <Quote>{content.text}</Quote>;
@@ -42,7 +46,7 @@ export const RichText = ({ content, quote, orange }) => {
     case "heading6":
       return <Highlight orange={orange}>{content.text}</Highlight>;
     case "paragraph":
-      return <div>{content.text}</div>;  
+      return <Paragraph>{content.text}</Paragraph>;  
     default:
     return <div>{content.text}</div>; 
   }

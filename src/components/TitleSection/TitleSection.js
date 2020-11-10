@@ -7,7 +7,7 @@ import { RichText } from '../RichText';
 export const TitleSection = ({ titleData }) => {
 
   const TitleContainer = styled.div`
-    margin: 20px; 
+    /* margin: 20px;  */
   `;
 
   return(
