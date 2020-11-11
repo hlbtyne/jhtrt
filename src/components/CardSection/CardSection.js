@@ -9,8 +9,8 @@ export const CardsContainer = styled.div`
     justify-content: space-between;
     padding: 40px;
   }
+  background-color: rgba(194,176,145,0.4);
   padding: 20px;
-  margin: 0px auto 40px;
 `;
 
 export const Card = styled.div`
@@ -19,8 +19,8 @@ export const Card = styled.div`
   justify-content: center;
   min-width: 225px;
   margin: 8px auto 30px;
-  padding: 60px 30px;
-  border: solid 1px #db5c1a;
+  padding: 50px 25px;
+  border: solid 3px #db5c1a;
   border-radius: 10px;
   @media (min-width: 950px) {
     margin: 8px 20px;

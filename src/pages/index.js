@@ -1,6 +1,7 @@
 import React from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
-import image from '../images/6.png';
+import image6 from '../images/6.png';
+import image1 from '../images/7.png';
 
 import { CardSection } from '../components/CardSection';
 import { Navbar } from '../components/Navbar';
@@ -64,8 +65,9 @@ export default ({ data }) => {
     return (
       <div>
         <Navbar />
-        <HeaderSection quoteData={quoteData} imageSrc={image}/>
+        <HeaderSection quoteData={quoteData} imageSrc={image6}/>
         {cardsData.length ? <CardSection cardsData={cardsData} /> : null}
+        <HeaderSection imageSrc={image1}/>
         <PageContent>
           {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
           {

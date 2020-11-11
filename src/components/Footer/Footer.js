@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import Link from "gatsby-link";
+import logo from '../../images/logo_vertical.png';
 
 export const FooterOuter = styled.div`
   display: flex;
@@ -24,9 +25,7 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 80px;
-  border: solid 1px white;
+  /* border: solid 1px white; */
   color: white;
   @media (max-width: 499px) {
     flex-direction: column;
@@ -91,7 +90,7 @@ export const Footer = () => {
     <FooterOuter>
         <Links />
         <LogoContainer>
-          JHTRT
+          <img src={logo} style={{"height": "150px"}} />
         </LogoContainer>
     </FooterOuter>
   );

@@ -1,12 +1,13 @@
 import React from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
+import logo from '../../images/logo_icon.png';
 import './Navbar.css';
 
 import Link from "gatsby-link";
 
 export const Navbar = () => (
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "zIndex": 100, "position": "sticky", "top": 0}}>
-    <a class="navbar-brand" href="/#"><Link to="/">JHTRT</Link></a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "zIndex": 5, "position": "sticky", "top": 0, "padding": 5}}>
+    <a class="navbar-brand" href="/#"><Link to="/"><img src={logo} style={{ "height": "60px" }}/></Link></a>
     <button 
       class="navbar-toggler toggler-example" 
       type="button" 
