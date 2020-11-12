@@ -19,25 +19,26 @@ export const CarouselCard = styled.div`
     justify-content: start;
     margin: 0 auto 30px;
     padding: 40px 20px;
-    background-color: rgba(194,176,145,0.2);
+    background-color: ${(props) => props.orange ? "white" : "rgba(194,176,145,0.2)"};
+    border: ${(props) => props.orange ? "solid 3px #db5c1a" : null};
     border-radius: 10px;
-    height: 215px;
+    max-height: 215px;
     @media (min-width: 950px) {
       margin: 8px 0 40px;
     }
 `;
 
 export const CardContent = styled.div`
-    height: 200px;
-    overflow-y: scroll;
+    max-height: 200px;
+    overflow-y: auto;
 `;
 
-export const Carousel = ({ title, cards }) => {
+export const Carousel = ({ cards, orange }) => {
   return (
     <CarouselContainer>
-        {cards.map(card => <CarouselCard>
-          <CardContent>
-          <RichText content={card.card_title[0]} />
+        {cards.map(card => <CarouselCard orange={orange} >
+          <CardContent >
+          {card.card_title ? <RichText content={card.card_title[0]} /> : null}
             {
               card.large_card_text.map(para => (<RichText content={para} />))
             }

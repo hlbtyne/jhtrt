@@ -11,7 +11,6 @@ export const ProjectsContainer = styled.div`
     margin: 20px auto;
   }
   margin: 20px 0;
-  padding: 0 20px;
 
 `;
 
@@ -19,14 +18,13 @@ export const Project = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 800px;
     margin: 8px auto 30px;
     padding: 40px 20px;
     background-color: rgba(194,176,145,0.2);
     border-radius: 10px;
     @media (min-width: 950px) {
-      margin: 8px 20px 30px 20px;
-      width: 340px;
+      margin: 8px 30px 30px 0;
+      width: 370px;
     }
 `;
 

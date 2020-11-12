@@ -18,21 +18,22 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 225px;
-  margin: 8px auto 30px;
-  padding: 50px 25px;
-  border: solid 3px #db5c1a;
+  margin: 0 auto 20px;
+  padding: 25px;
+  border: ${(props) => props.orange ? "solid 3px #db5c1a" : null};
   border-radius: 10px;
   @media (min-width: 950px) {
     margin: 8px 20px;
     width: 420px;
+    padding: 50px 25px;
   }
 `;
 
-export const CardSection = ({ cardsData }) => {
+export const CardSection = ({ cardsData, orange }) => {
 
   const cards = cardsData.map(card => 
-    <Card>
-        {card.card_header && <RichText content={card.card_header[0]} /> }
+    <Card orange={orange}>
+        {card.card_header && <RichText orange content={card.card_header[0]} /> }
         {card.card_text && <RichText orange content={card.card_text[0]} /> }
     </Card>);
 

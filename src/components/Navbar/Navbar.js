@@ -6,7 +6,7 @@ import './Navbar.css';
 import Link from "gatsby-link";
 
 export const Navbar = () => (
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "zIndex": 5, "position": "sticky", "top": 0, "padding": 5}}>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ "zIndex": 5, "position": "sticky", "top": 0, "padding": "5px 10px"}}>
     <a class="navbar-brand" href="/#"><Link to="/"><img src={logo} style={{ "height": "60px" }}/></Link></a>
     <button 
       class="navbar-toggler toggler-example" 
@@ -18,7 +18,7 @@ export const Navbar = () => (
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse" id="navbarColor03">
+    <div class="navbar-collapse collapse" id="navbarColor03" style={{ "padding": "0 10px" }}>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <Link to="/about">

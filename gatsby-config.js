@@ -16,12 +16,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `/static/favicon.svg`,
+      }
+    }
   ],
   siteMetadata: {
     title: "John Hodgson Theatre Research Trust",
     description:
       "",
     url: "https://jhtrt.org.uk",
-    image: "/static/favicon.ico",
+    image: "/static/favicon.svg",
   },
 }

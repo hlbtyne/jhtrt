@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import image from '../images/4.png';
+import image4 from '../images/4.png';
+import image from '../images/2.png';
 
 import { TitleSection } from '../components/TitleSection';
 import { TextSection } from '../components/TextSection';
@@ -9,6 +10,7 @@ import { HeaderSection } from '../components/HeaderSection';
 import { Navbar } from '../components/Navbar';
 import { ProjectsSection } from '../components/ProjectsSection/ProjectsSection';
 import { Footer } from '../components/Footer';
+import { Carousel } from '../components/Carousel';
 
 export const query = graphql`
 {
@@ -25,6 +27,7 @@ export const query = graphql`
           type
           fields {
             card_text
+            card_header
           }
         }
         ... on PRISMIC_PageBody1Past_projects {
@@ -40,6 +43,12 @@ export const query = graphql`
             video_url
           }
         }
+        ... on PRISMIC_PageBody1Large_info_card {
+          fields {
+            card_title
+            large_card_text
+          }
+        }
       }
       image
     }
@@ -50,17 +59,20 @@ export const query = graphql`
 export const SubmissionsPage = ({ data }) => {
   const title = data.prismic.page.title[0];
   const text = data.prismic.page.page_text
-  const projectsTitle = data.prismic.page.body1[0].primary.past_projects_title[0]
-  const projectsData = data.prismic.page.body1[0].fields
+  const emailData = data.prismic.page.body1[0].fields
+  const projectsTitle = data.prismic.page.body1[1].primary.past_projects_title[0]
+  const projectsData = data.prismic.page.body1[1].fields
 
-    return (
+  return (
       <div>
         <Navbar />
-        <HeaderSection imageSrc={image}/>
+        <HeaderSection imageSrc={image4}/>
         <PageContent>
           {title ? <TitleSection titleData={title} /> : null}
           {text.length ? <TextSection textData={text} /> : null}
+          {emailData.length ? <Carousel orange cards={emailData} />: null}
           </PageContent>
+          <HeaderSection imageSrc={image}/>
           <PageContent>
           {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
           {projectsData.length ? <ProjectsSection projectsData={projectsData} /> : null}

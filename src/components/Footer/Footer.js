@@ -25,8 +25,6 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: solid 1px white; */
-  color: white;
   @media (max-width: 499px) {
     flex-direction: column;
     align-items: left;
@@ -42,45 +40,40 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   line-height: 2.2;
-  color: white;
-`;
-
-const FooterLink = styled(Link)`
-  color: white;
 `;
 
 export const Links = () => (
   <List>
     <ListItem>
-      <FooterLink to="/">
+      <Link to="/">
           Home
-      </FooterLink>
+      </Link>
     </ListItem>
     <ListItem>
-      <FooterLink to="/about">
+      <Link to="/about">
           About
-      </FooterLink>
+      </Link>
     </ListItem>
     <ListItem>
-      <FooterLink to="/trustees">
+      <Link to="/trustees">
           Trustees
-      </FooterLink>
+      </Link>
     </ListItem>
     <ListItem>
-      <FooterLink to="/legacy">
+      <Link to="/legacy">
           Legacy
-      </FooterLink>
+      </Link>
     </ListItem>
     <ListItem>
-      <FooterLink to="/submissions">
+      <Link to="/submissions">
           Submissions
-      </FooterLink>
+      </Link>
     </ListItem>
-    <ListItem>
-      <FooterLink to="/contact">
+    {/* <ListItem>
+      <Link to="/submissions">
           Contact
-      </FooterLink>
-    </ListItem>
+      </Link>
+    </ListItem> */}
   </List>
 )
 
