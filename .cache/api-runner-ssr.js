@@ -1,15 +1,9 @@
 var plugins = [{
-      plugin: require('/Users/harrietballantyne/Dev/jhtrt/jhtrt-site/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
+      plugin: require('/Users/pollen/Dev/jhtrt/jhtrt/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
       options: {"plugins":[],"repositoryName":"jhtrt","langs":["en-gb"],"defaultLang":"en-gb","previews":true},
     },{
-      plugin: require('/Users/harrietballantyne/Dev/jhtrt/jhtrt-site/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/pollen/Dev/jhtrt/jhtrt/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
-    },{
-      plugin: require('/Users/harrietballantyne/Dev/jhtrt/jhtrt-site/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('/Users/harrietballantyne/Dev/jhtrt/jhtrt-site/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"icon":"/static/favicon.svg","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":null},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

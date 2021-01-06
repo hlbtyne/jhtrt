@@ -15,13 +15,13 @@ module.exports = {
       options: {
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        icon: `/static/favicon.svg`,
-      }
-    }
+    // `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     icon: `/static/favicon.svg`,
+    //   }
+    // }
   ],
   siteMetadata: {
     title: "John Hodgson Theatre Research Trust",
