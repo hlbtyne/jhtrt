@@ -8,7 +8,7 @@ import { CardSection } from "../components/CardSection"
 import { Navbar } from "../components/Navbar"
 import { HeaderSection } from "../components/HeaderSection"
 import { Footer } from "../components/Footer"
-import { Carousel } from "../components/Carousel"
+import { LargeCardSection } from "../components/LargeCardSection"
 import { PageContent } from "../components/PageContent"
 import { TitleSection } from "../components/TitleSection"
 import { TextSection } from "../components/TextSection"
@@ -47,6 +47,7 @@ export const query = graphql`
             fields {
               card_title
               large_card_text
+              card_subheader
             }
           }
         }
@@ -77,7 +78,7 @@ export default ({ data }) => {
       <PageContent>
         {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
         {projectsIntro.length ? <TextSection textData={projectsIntro} /> : null}
-        {projectsData.length ? <Carousel cards={projectsData} /> : null}
+        {projectsData.length ? <LargeCardSection cards={projectsData} /> : null}
       </PageContent>
       <HeaderSection imageSrc={image1} />
       {testimonialsData.length ? (
