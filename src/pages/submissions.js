@@ -44,8 +44,12 @@ export const query = graphql`
             }
           }
           ... on PRISMIC_PageBody1Large_info_card {
+            primary {
+              large_card_title
+            }
             fields {
               card_title
+              card_subheader
               large_card_text
             }
           }
@@ -62,24 +66,33 @@ export const SubmissionsPage = ({ data }) => {
   const emailData = data.prismic.page.body1[0].fields
   const projectsTitle =
     data.prismic.page.body1[1].primary.past_projects_title[0]
+  const covidProjectsTitle =
+    data.prismic.page.body1[2].primary.large_card_title[0]
   const projectsData = data.prismic.page.body1[1].fields
-
+  const covidProjectsData = data.prismic.page.body1[2].fields
+  console.log(data.prismic.page.body1[2])
   return (
     <div>
       <Navbar />
       <HeaderSection imageSrc={image4} />
       <PageContent>
         {title ? <TitleSection titleData={title} /> : null}
-        {text.length ? <TextSection textData={text} /> : null}
-        {emailData.length ? (
+        {text.length > 0 ? <TextSection textData={text} /> : null}
+        {emailData.length > 0 ? (
           <LargeCardSection orange cards={emailData} />
         ) : null}
       </PageContent>
       <HeaderSection imageSrc={image} />
       <PageContent>
         {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
-        {projectsData.length ? (
+        {projectsData.length > 0 ? (
           <ProjectsSection projectsData={projectsData} />
+        ) : null}
+        {covidProjectsTitle ? (
+          <TitleSection titleData={covidProjectsTitle} />
+        ) : null}
+        {covidProjectsData.length > 0 ? (
+          <LargeCardSection cards={covidProjectsData} />
         ) : null}
       </PageContent>
       <Footer />
