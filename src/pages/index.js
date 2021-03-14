@@ -48,6 +48,7 @@ export const query = graphql`
               card_title
               large_card_text
               card_subheader
+              video_url_large
             }
           }
         }

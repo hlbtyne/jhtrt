@@ -23,7 +23,6 @@ export const LargeCard = styled.div`
     props.orange ? "white" : "rgba(194,176,145,0.2)"};
   border: ${props => (props.orange ? "solid 3px #db5c1a" : null)};
   border-radius: 10px;
-  max-height: 215px;
   @media (min-width: 950px) {
     margin: 8px 0 40px;
   }
@@ -38,11 +37,26 @@ export const Spacer = styled.div`
   height: 6px;
 `
 
+export const StyledVideo = styled.iframe`
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+`
+
 export const LargeCardSection = ({ cards, orange }) => {
   return (
     <LargeCardSectionContainer>
       {cards.map(card => (
         <LargeCard orange={orange}>
+          {card.video_url_large && (
+            <StyledVideo
+              width="100%"
+              height="400px"
+              src={card.video_url_large}
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          )}
           <CardContent>
             {card.card_title ? (
               <>
