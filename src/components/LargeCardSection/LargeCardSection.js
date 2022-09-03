@@ -29,7 +29,7 @@ export const LargeCard = styled.div`
 `
 
 export const CardContent = styled.div`
-  max-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
 `
 
