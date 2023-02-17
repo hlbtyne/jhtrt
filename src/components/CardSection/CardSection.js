@@ -1,7 +1,7 @@
-import React from "react";
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
-import { RichText } from '../RichText';
+import { RichText } from "../RichText"
 
 export const CardsContainer = styled.div`
   @media (min-width: 950px) {
@@ -9,9 +9,9 @@ export const CardsContainer = styled.div`
     justify-content: space-between;
     padding: 40px;
   }
-  background-color: rgba(194,176,145,0.4);
+  background-color: rgba(194, 176, 145, 0.4);
   padding: 20px;
-`;
+`
 
 export const Card = styled.div`
   display: flex;
@@ -20,28 +20,24 @@ export const Card = styled.div`
   min-width: 225px;
   margin: 0 auto 20px;
   padding: 25px;
-  border: ${(props) => props.orange ? "solid 3px #db5c1a" : null};
+  border: ${props => (props.orange ? "solid 3px #db5c1a" : null)};
   border-radius: 10px;
   @media (min-width: 950px) {
     margin: 8px 20px;
-    width: 420px;
+    width: 500px;
     padding: 50px 25px;
   }
-`;
+`
 
 export const CardSection = ({ cardsData, orange }) => {
-
-  const cards = cardsData.map(card => 
+  const cards = cardsData.map(card => (
     <Card orange={orange}>
-        {card.card_header && <RichText orange content={card.card_header[0]} /> }
-        {card.card_text && <RichText orange content={card.card_text[0]} /> }
-    </Card>);
+      {card.card_header && <RichText orange content={card.card_header[0]} />}
+      {card.card_text && <RichText orange content={card.card_text[0]} />}
+    </Card>
+  ))
 
-  return(
-    <CardsContainer>
-      {cards}
-    </CardsContainer>
-  );
-};
+  return <CardsContainer>{cards}</CardsContainer>
+}
 
-export default CardSection;
+export default CardSection
