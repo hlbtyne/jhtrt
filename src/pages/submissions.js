@@ -80,7 +80,6 @@ export const SubmissionsPage = ({ data }) => {
   const projectsData = data.prismic.page.body1[1].fields
   const covidProjectsData = data.prismic.page.body1[2].fields
 
-  // console.log(additionalText)
   return (
     <div>
       <Navbar />
