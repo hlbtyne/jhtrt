@@ -51,6 +51,7 @@ export const query = graphql`
           ... on PRISMIC_PageBody1Large_info_card {
             primary {
               large_card_title
+              large_card_section_intro
             }
             fields {
               card_title
@@ -69,16 +70,22 @@ export const query = graphql`
 export const SubmissionsPage = ({ data }) => {
   const title = data.prismic.page.title[0]
   const text = data.prismic.page.page_text
-  const additionalTitle = data.prismic.page.additional_title[0]
-  const additionalText = data.prismic.page.additional_page_text
+  const faqsTitle = data.prismic.page.additional_title[0]
+  const faqsText = data.prismic.page.additional_page_text
 
   const emailData = data.prismic.page.body1[0].fields
+  const leedsInfoTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  const leedsInfoIntro =
+    data.prismic.page.body1[1].primary.large_card_section_intro
+  const leedsInfoData = data.prismic.page.body1[1].fields
+  console.log(data.prismic.page.body1[3])
+
   const projectsTitle =
-    data.prismic.page.body1[1].primary.past_projects_title[0]
+    data.prismic.page.body1[2].primary.past_projects_title[0]
   const covidProjectsTitle =
-    data.prismic.page.body1[2].primary.large_card_title[0]
-  const projectsData = data.prismic.page.body1[1].fields
-  const covidProjectsData = data.prismic.page.body1[2].fields
+    data.prismic.page.body1[3].primary.large_card_title[0]
+  const projectsData = data.prismic.page.body1[2].fields
+  const covidProjectsData = data.prismic.page.body1[3].fields
 
   return (
     <div>
@@ -87,13 +94,16 @@ export const SubmissionsPage = ({ data }) => {
 
       <PageContent>
         {title ? <TitleSection titleData={title} /> : null}
-        {text.length > 0 ? <TextSection textData={text} /> : null}
         {emailData.length > 0 ? (
           <LargeCardSection orange cards={emailData} />
         ) : null}
-        {additionalTitle ? <TitleSection titleData={additionalTitle} /> : null}
-        {additionalText.length > 0 ? (
-          <TextSection textData={additionalText} />
+        {text.length > 0 ? <TextSection textData={text} /> : null}
+        {faqsTitle ? <TitleSection titleData={faqsTitle} /> : null}
+        {faqsText.length > 0 ? <TextSection textData={faqsText} /> : null}
+        {leedsInfoTitle ? <TitleSection titleData={leedsInfoTitle} /> : null}
+        {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null}
+        {leedsInfoData.length > 0 ? (
+          <LargeCardSection orange cards={leedsInfoData} />
         ) : null}
       </PageContent>
 

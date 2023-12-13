@@ -63,22 +63,30 @@ export const query = graphql`
 
 export default ({ data }) => {
   const quoteData = data.prismic.page.quote[0]
-  const cardsData = data.prismic.page.body1[0].fields
-  const projectsTitle = data.prismic.page.body1[1].primary.large_card_title[0]
-  const projectsIntro =
-    data.prismic.page.body1[1].primary.large_card_section_intro
-  const projectsData = data.prismic.page.body1[1].fields
-  const testimonialsData = data.prismic.page.body1[2].fields
+  const infoCardsData = data.prismic.page.body1[0].fields
+  const newsTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  const newsCardsData = data.prismic.page.body1[1].fields
+  const projectsTitle = data.prismic.page.body1[2].primary.large_card_title[0]
+  const projectsData = data.prismic.page.body1[2].fields
+  const testimonialsData = data.prismic.page.body1[3].fields
+
+  console.log(projectsTitle)
 
   return (
     <div>
       <Navbar />
       <HeaderSection quoteData={quoteData} imageSrc={image6} />
-      {cardsData.length ? <CardSection orange cardsData={cardsData} /> : null}
+      {infoCardsData.length ? (
+        <CardSection orange cardsData={infoCardsData} />
+      ) : null}
       <HeaderSection imageSrc={image7} />
       <PageContent>
+        {newsTitle ? <TitleSection titleData={newsTitle} /> : null}
+        {newsCardsData.length ? (
+          <LargeCardSection cards={newsCardsData} />
+        ) : null}
+
         {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
-        {projectsIntro.length ? <TextSection textData={projectsIntro} /> : null}
         {projectsData.length ? <LargeCardSection cards={projectsData} /> : null}
       </PageContent>
       <HeaderSection imageSrc={image1} />
