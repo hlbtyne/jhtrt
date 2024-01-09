@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { graphql } from "gatsby"
 import image4 from "../images/4.png"
 import image from "../images/2.png"
@@ -52,6 +53,7 @@ export const query = graphql`
             primary {
               large_card_title
               large_card_section_intro
+              large_card_image
             }
             fields {
               card_title
@@ -67,6 +69,19 @@ export const query = graphql`
   }
 `
 
+export const LeedsLogoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100px;
+`
+
+export const StyledLeedsLogo = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`
+
 export const SubmissionsPage = ({ data }) => {
   const title = data.prismic.page.title[0]
   const text = data.prismic.page.page_text
@@ -78,8 +93,7 @@ export const SubmissionsPage = ({ data }) => {
   const leedsInfoIntro =
     data.prismic.page.body1[1].primary.large_card_section_intro
   const leedsInfoData = data.prismic.page.body1[1].fields
-  console.log(data.prismic.page.body1[3])
-
+  const leedsLogoSrc = data.prismic.page.body1[1].primary.large_card_image.url
   const projectsTitle =
     data.prismic.page.body1[2].primary.past_projects_title[0]
   const covidProjectsTitle =
@@ -104,6 +118,11 @@ export const SubmissionsPage = ({ data }) => {
         {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null}
         {leedsInfoData.length > 0 ? (
           <LargeCardSection orange cards={leedsInfoData} />
+        ) : null}
+        {leedsLogoSrc ? (
+          <LeedsLogoContainer>
+            <StyledLeedsLogo src={leedsLogoSrc} />
+          </LeedsLogoContainer>
         ) : null}
       </PageContent>
 

@@ -64,6 +64,7 @@ export const LargeCardSection = ({ cards, orange }) => {
                 <Spacer />
               </>
             ) : null}
+
             {card.card_subheader && card.card_subheader.length > 0 ? (
               <>
                 <RichText content={card.card_subheader[0]} />
