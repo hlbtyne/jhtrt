@@ -114,16 +114,16 @@ export const SubmissionsPage = ({ data }) => {
         {text.length > 0 ? <TextSection textData={text} /> : null}
         {faqsTitle ? <TitleSection titleData={faqsTitle} /> : null}
         {faqsText.length > 0 ? <TextSection textData={faqsText} /> : null}
-        {leedsInfoTitle ? <TitleSection titleData={leedsInfoTitle} /> : null}
-        {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null}
-        {leedsInfoData.length > 0 ? (
+        {/* {leedsInfoTitle ? <TitleSection titleData={leedsInfoTitle} /> : null} */}
+        {/* {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null} */}
+        {/* {leedsInfoData.length > 0 ? (
           <LargeCardSection orange cards={leedsInfoData} />
-        ) : null}
-        {leedsLogoSrc ? (
+        ) : null} */}
+        {/* {leedsLogoSrc ? (
           <LeedsLogoContainer>
             <StyledLeedsLogo src={leedsLogoSrc} />
           </LeedsLogoContainer>
-        ) : null}
+        ) : null} */}
       </PageContent>
 
       <HeaderSection imageSrc={image} />
