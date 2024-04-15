@@ -65,12 +65,12 @@ export default ({ data }) => {
   const quoteData = data.prismic.page.quote[0]
   const infoCardsData = data.prismic.page.body1[0].fields
   const newsTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  const newsSectionIntro =
+    data.prismic.page.body1[1].primary.large_card_section_intro
   const newsCardsData = data.prismic.page.body1[1].fields
   const projectsTitle = data.prismic.page.body1[2].primary.large_card_title[0]
   const projectsData = data.prismic.page.body1[2].fields
   const testimonialsData = data.prismic.page.body1[3].fields
-
-  console.log(projectsTitle)
 
   return (
     <div>
@@ -82,8 +82,11 @@ export default ({ data }) => {
       <HeaderSection imageSrc={image7} />
       <PageContent>
         {newsTitle ? <TitleSection titleData={newsTitle} /> : null}
+        {newsSectionIntro.length ? (
+          <TextSection textData={newsSectionIntro} />
+        ) : null}
         {newsCardsData.length ? (
-          <LargeCardSection cards={newsCardsData} />
+          <LargeCardSection cards={newsCardsData} orange />
         ) : null}
 
         {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}

@@ -71,9 +71,9 @@ export const LargeCardSection = ({ cards, orange }) => {
                 <Spacer />
               </>
             ) : null}
-            {card.large_card_text.map(para => (
-              <RichText content={para} />
-            ))}
+            {card.large_card_text &&
+              card.large_card_text.length &&
+              card.large_card_text.map(para => <RichText content={para} />)}
           </CardContent>
         </LargeCard>
       ))}

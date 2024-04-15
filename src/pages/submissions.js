@@ -89,11 +89,12 @@ export const SubmissionsPage = ({ data }) => {
   const faqsText = data.prismic.page.additional_page_text
 
   const emailData = data.prismic.page.body1[0].fields
-  const leedsInfoTitle = data.prismic.page.body1[1].primary.large_card_title[0]
-  const leedsInfoIntro =
-    data.prismic.page.body1[1].primary.large_card_section_intro
-  const leedsInfoData = data.prismic.page.body1[1].fields
-  const leedsLogoSrc = data.prismic.page.body1[1].primary.large_card_image.url
+  // const leedsInfoTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  // const leedsInfoIntro =
+  //   data.prismic.page.body1[1].primary.large_card_intro
+  // const leedsInfoData = data.prismic.page.body1[1].fields
+  // const leedsLogoSrc =
+  //   data.prismic.page.body1[1].primary.large_card_section_image.url
   const projectsTitle =
     data.prismic.page.body1[2].primary.past_projects_title[0]
   const covidProjectsTitle =
@@ -114,6 +115,7 @@ export const SubmissionsPage = ({ data }) => {
         {text.length > 0 ? <TextSection textData={text} /> : null}
         {faqsTitle ? <TitleSection titleData={faqsTitle} /> : null}
         {faqsText.length > 0 ? <TextSection textData={faqsText} /> : null}
+        // Leeds city of culture content hidden for now
         {/* {leedsInfoTitle ? <TitleSection titleData={leedsInfoTitle} /> : null} */}
         {/* {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null} */}
         {/* {leedsInfoData.length > 0 ? (
