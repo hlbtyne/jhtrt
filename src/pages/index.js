@@ -49,6 +49,7 @@ export const query = graphql`
               large_card_text
               card_subheader
               video_url_large
+              card_image
             }
           }
         }
@@ -86,7 +87,7 @@ export default ({ data }) => {
           <TextSection textData={newsSectionIntro} />
         ) : null}
         {newsCardsData.length ? (
-          <LargeCardSection cards={newsCardsData} orange />
+          <LargeCardSection cards={newsCardsData} orange wrap />
         ) : null}
 
         {projectsTitle ? <TitleSection titleData={projectsTitle} /> : null}
