@@ -1,8 +1,8 @@
 var plugins = [{
-      plugin: require('/Users/harriet.ballantyne/Development/jhtrt/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
+      plugin: require('/Users/davide/Harriet/jhtrt/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
       options: {"plugins":[],"repositoryName":"jhtrt","langs":["en-gb"],"defaultLang":"en-gb","previews":true},
     },{
-      plugin: require('/Users/harriet.ballantyne/Development/jhtrt/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/davide/Harriet/jhtrt/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

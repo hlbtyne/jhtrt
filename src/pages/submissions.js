@@ -69,13 +69,13 @@ export const query = graphql`
   }
 `
 
-export const LeedsLogoContainer = styled.div`
+export const BradfordLogoContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100px;
 `
 
-export const StyledLeedsLogo = styled.img`
+export const StyledBradfordLogo = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -89,20 +89,20 @@ export const SubmissionsPage = ({ data }) => {
   const faqsText = data.prismic.page.additional_page_text
 
   const emailData = data.prismic.page.body1[0].fields
-  // const leedsInfoTitle = data.prismic.page.body1[1].primary.large_card_title[0]
-  // const leedsInfoIntro =
+  // const bradfordInfoTitle = data.prismic.page.body1[1].primary.large_card_title[0]
+  // const bradfordInfoIntro =
   //   data.prismic.page.body1[1].primary.large_card_intro
-  // const leedsInfoData = data.prismic.page.body1[1].fields
-  // const leedsLogoSrc =
+  // const bradfordInfoData = data.prismic.page.body1[1].fields
+  // const bradfordLogoSrc =
   //   data.prismic.page.body1[1].primary.large_card_section_image.url
   const projectsTitle =
-    data.prismic.page.body1[2].primary.past_projects_title[0]
+    data.prismic.page.body1[1].primary.past_projects_title[0]
   const covidProjectsTitle =
-    data.prismic.page.body1[3].primary.large_card_title[0]
-  const projectsData = data.prismic.page.body1[2].fields
-  const covidProjectsData = data.prismic.page.body1[3].fields
+    data.prismic.page.body1[2].primary.large_card_title[0]
+  const projectsData = data.prismic.page.body1[1].fields
+  const covidProjectsData = data.prismic.page.body1[2].fields
 
-  return (
+  return console.log(data) || (
     <div>
       <Navbar />
       <HeaderSection imageSrc={image4} />
@@ -115,16 +115,15 @@ export const SubmissionsPage = ({ data }) => {
         {text.length > 0 ? <TextSection textData={text} /> : null}
         {faqsTitle ? <TitleSection titleData={faqsTitle} /> : null}
         {faqsText.length > 0 ? <TextSection textData={faqsText} /> : null}
-        // Leeds city of culture content hidden for now
-        {/* {leedsInfoTitle ? <TitleSection titleData={leedsInfoTitle} /> : null} */}
-        {/* {leedsInfoIntro ? <TextSection textData={leedsInfoIntro} /> : null} */}
-        {/* {leedsInfoData.length > 0 ? (
-          <LargeCardSection orange cards={leedsInfoData} />
+        {/* {bradfordInfoTitle ? <TitleSection titleData={bradfordInfoTitle} /> : null}
+        {bradfordInfoIntro ? <TextSection textData={bradfordInfoIntro} /> : null}
+        {bradfordInfoData.length > 0 ? (
+          <LargeCardSection orange cards={bradfordInfoData} />
         ) : null} */}
-        {/* {leedsLogoSrc ? (
-          <LeedsLogoContainer>
-            <StyledLeedsLogo src={leedsLogoSrc} />
-          </LeedsLogoContainer>
+        {/* {bradfordLogoSrc ? (
+          <bradfordLogoContainer>
+            <StyledBradfordLogo src={bradfordLogoSrc} />
+          </bradfordLogoContainer>
         ) : null} */}
       </PageContent>
 

@@ -73,7 +73,7 @@ export const LargeCardSection = ({ cards, orange, wrap }) => {
     <LargeCardSectionContainer wrap={wrap}>
       {cards.map(
         card =>
-          console.log(card) || (
+         (
             <LargeCard orange={orange} wrap={wrap}>
               {card.card_image && (
                 <LargeCardImageContainer>
