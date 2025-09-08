@@ -109,10 +109,10 @@ export const SubmissionsPage = ({ data }) => {
 
       <PageContent>
         {title ? <TitleSection titleData={title} /> : null}
-        {emailData.length > 0 ? (
-          <LargeCardSection orange cards={emailData} />
-        ) : null}
         {text.length > 0 ? <TextSection textData={text} /> : null}
+          {emailData.length > 0 ? (
+            <LargeCardSection orange cards={emailData} />
+          ) : null}
         {faqsTitle ? <TitleSection titleData={faqsTitle} /> : null}
         {faqsText.length > 0 ? <TextSection textData={faqsText} /> : null}
         {/* {bradfordInfoTitle ? <TitleSection titleData={bradfordInfoTitle} /> : null}

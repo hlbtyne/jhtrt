@@ -28,7 +28,7 @@ export const LargeCard = styled.div`
   }
   @media (min-width: 600px) {
     margin: ${props => (props.wrap ? "0 15px" : "0 auto 30px")};
-    width: ${props => (props.wrap ? "50%" : null)};
+    width: ${props => (props.wrap ? "50%" : "100%")};
   }
   margin: 0 0 20px;
   padding: 40px 20px;
